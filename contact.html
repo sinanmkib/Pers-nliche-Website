@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="navbar-container">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo">Sinan Gerwig</a>
+        <nav class="main-nav">
+          <a href="bio.html">Biographie</a>
+          <a href="links.html">LinkedIn</a>
+          <a href="projects.html">Projekte</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="skills.html">Fähigkeiten</a>
+          <button id="theme-toggle" aria-label="Toggle light/dark mode" style="background:none; border:none; color: var(--color-text); cursor:pointer; font-size:1.2em; padding: 0 10px;">🌙</button>
+        </nav>
+      </div>
+    </header>
+  <main class="container">
+    <h1>Kontakt</h1>
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Senden</button>
+    </form>
+    <a class="back" href="index.html">Zurück zur Startseite</a>
+  </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("SQwSk2q8irZwHSg9V"); // Replace with your EmailJS user ID
+    })();
+  </script>
+</html>

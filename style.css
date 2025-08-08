@@ -1,0 +1,313 @@
+/* Root reset */
+*{box-sizing:border-box;margin:0;padding:0;}
+
+/* CSS Variables for light and dark mode */
+:root {
+  --color-text: #222;
+  --color-background: #fafafa;
+  --color-primary: #3747d4;
+  --color-primary-light: #f5f5f5;
+  --color-secondary-text: #444;
+  --color-border: #e0e0e0;
+  --color-button-bg: #3747d4;
+  --color-button-hover-bg: #3747d4;
+  --color-button-shadow: rgba(211,47,47,0.08);
+  --color-avatar-border: #3747d4;
+  --color-avatar-shadow: rgba(211,47,47,0.10);
+  --color-link: #3747d4;
+  --color-link-hover-bg: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --color-text: #ddd;
+  --color-background: #121212;
+  --color-primary: #8ab4f8;
+  --color-primary-light: #1f1f1f;
+  --color-secondary-text: #bbb;
+  --color-border: #333;
+  --color-button-bg: #8ab4f8;
+  --color-button-hover-bg: #6a8de0;
+  --color-button-shadow: rgba(138,180,248,0.4);
+  --color-avatar-border: #8ab4f8;
+  --color-avatar-shadow: rgba(138,180,248,0.3);
+  --color-link: #8ab4f8;
+  --color-link-hover-bg: #333;
+}
+
+/* Typography */
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+/* Layout helpers */
+.container, .main-content {
+  max-width: 900px;
+  margin: 120px auto 40px auto;
+  padding: 48px 32px;
+  text-align: center;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Header & Nav */
+.navbar-container {
+  width: 100%;
+  background: var(--color-background);
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  border-radius: 0;
+  background: var(--color-background);
+  box-shadow: none;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.7em;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav.main-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08em;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: color 0.2s, background 0.2s;
+}
+
+nav.main-nav a:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+/* Main content card */
+.main-content {
+  max-width: 900px;
+  margin: 120px auto 40px auto;
+  padding: 48px 32px;
+  text-align: center;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+h1 {
+  font-size: 2.8em;
+  margin-bottom: 24px;
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  color: var(--color-primary);
+  margin-top: 36px;
+  margin-bottom: 18px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+p, .info {
+  font-size: 1.18em;
+  line-height: 1.8;
+  color: var(--color-secondary-text);
+  margin-bottom: 18px;
+}
+
+/* Buttons */
+.button, .back, button[type="submit"] {
+  display: inline-block;
+  margin-top: 32px;
+  background-color: var(--color-button-bg);
+  color: white;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.08em;
+  border: none;
+  box-shadow: 0 2px 8px var(--color-button-shadow);
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.button:hover, .back:hover, button[type="submit"]:hover {
+  background-color: var(--color-button-hover-bg);
+  transform: scale(1.05);
+}
+
+/* Avatar/Profile Image */
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 40% top;
+  margin-bottom: 24px;
+  border: 4px solid var(--color-avatar-border);
+  box-shadow: 0 4px 16px var(--color-avatar-shadow);
+}
+
+/* Project List, Skills List, LinkedIn Card, Resume Section */
+ul.project-list, ul.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+ul.project-list li, ul.skills-list li, .linkedin-card, .resume-section {
+  background: var(--color-background);
+  border-radius: 12px;
+  padding: 22px 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: var(--color-text);
+  font-size: 1.08em;
+  min-width: 180px;
+  margin-bottom: 10px;
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.linkedin-card {
+  margin: 32px auto 0 auto;
+  max-width: 600px;
+  text-align: left;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+ul.project-list li:hover, ul.skills-list li:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+}
+.resume-section {
+  margin-top: 36px;
+  color: #444;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 24px;
+}
+label {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--color-secondary-text);
+  align-self: flex-start;
+}
+input, textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+  color: var(--color-text);
+  background: var(--color-background);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: none;
+  transition: border 0.2s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid var(--color-primary);
+  outline: none;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:2rem 0;
+  font-size:.95rem;
+  color: var(--color-secondary-text);
+  background: transparent;
+}
+footer a{
+  color: var(--color-link);
+  text-decoration:none;
+  font-weight: 600;
+}
+
+/* Images */
+img{
+  max-width:100%;
+  height:auto;
+}
+
+@media (max-width: 700px) {
+  .container, .main-content {
+    padding: 18px 4vw;
+    margin: 90px 0 24px 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+  .navbar-inner {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 2vw;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  nav.main-nav {
+    gap: 10px;
+  }
+  .avatar {
+    width: 90px;
+    height: 90px;
+    object-position: 40% top;
+  }
+}
+
+/* Projektboxen einheitlich */
+ul.project-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+ul.project-list li {
+  width: 100%;
+  max-width: 700px;
+  min-height: 160px; /* Optional – sorgt für einheitliche Höhe */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,42 @@
+background: none;
+  border-radius: 0;
+  padding: 22px 28px;
+  box-shadow: none;
+  color: #222;
+  font-size: 1.08em;
+  min-width: 180px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+=======
+ul.project-list li, ul.skills-list li, .linkedin-card, .resume-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: #222;
+  font-size: 1.08em;
+  min-width: 180px;
+  margin-bottom: 10px;
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+ul.project-list li, ul.skills-list li, .linkedin-card, .resume-section {
+  background: none;
+  border-radius: 0;
+  padding: 22px 28px;
+  box-shadow: none;
+  color: #222;
+  font-size: 1.08em;
+  min-width: 180px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+=======
+ul.project-list li:hover, ul.skills-list li:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+}
