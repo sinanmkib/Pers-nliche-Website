@@ -14,7 +14,7 @@ Sie dient als digitale Visitenkarte mit Informationen zu mir, meinen Fähigkeite
 
 Die Website besteht aus mehreren klar strukturierten Seiten:
 
-- **Startseite (`index.html`)** – Begrüßung, kurze Vorstellung und zentraler Einstiegspunkt.  
+- **Startseite (`index.html`)** – Begrüssung, kurze Vorstellung und zentraler Einstiegspunkt.  
 - **Bio (`bio.html`)** – Ausführlichere Informationen zu meinem Hintergrund, Werdegang und Interessen.  
 - **Skills (`skills.html`)** – Übersicht meiner fachlichen und technischen Fähigkeiten.  
 - **Projekte (`projects.html`)** – Auswahl abgeschlossener und laufender Projekte mit kurzen Beschreibungen.  
