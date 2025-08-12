@@ -228,4 +228,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger-menu');
+  const nav = document.getElementById('main-nav');
+  const overlay = document.getElementById('mobile-nav-overlay');
   
+  if (hamburger && nav && overlay) {
+    function closeMenu() {
+      nav.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    
+    function openMenu() {
+      nav.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    
+    hamburger.addEventListener('click', function() {
+      if (nav.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+    
+    overlay.addEventListener('click', closeMenu);
+    
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    
+    // Schließe Menü bei Escape-Taste
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+  }
+  
+  // Hamburger-Button Anzeige basierend auf Bildschirmgröße
+  function toggleHamburgerDisplay() {
+    const btn = document.getElementById('hamburger-menu');
+    if (btn) {
+      if (window.innerWidth <= 700) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+        // Schließe Menü wenn Bildschirm größer wird
+        const nav = document.getElementById('main-nav');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        if (nav && overlay) {
+          nav.classList.remove('open');
+          overlay.classList.remove('open');
+        }
+      }
+    }
+  }
+  
+  window.addEventListener('resize', toggleHamburgerDisplay);
+  toggleHamburgerDisplay(); // Initial call
+});
