@@ -438,3 +438,91 @@ ul.project-list li {
   flex-direction: column;
   justify-content: center;
 }
+
+/* CV Table Styles */
+.cv-section {
+  margin: 40px 0;
+  text-align: left;
+}
+
+.cv-section h2 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+  opacity: 0.8;
+}
+
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--color-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-border);
+}
+
+.cv-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cv-table tr:last-child {
+  border-bottom: none;
+}
+
+.cv-table tr:hover {
+  background: rgba(138, 180, 248, 0.03);
+}
+
+.cv-label {
+  background: rgba(138, 180, 248, 0.1);
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  min-width: 120px;
+  width: 25%;
+  border-right: 1px solid var(--color-border);
+}
+
+.cv-value {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Responsive table design */
+@media (max-width: 768px) {
+  .cv-table {
+    font-size: 0.9em;
+  }
+  
+  .cv-label, .cv-value {
+    padding: 8px 12px;
+  }
+  
+  .cv-label {
+    min-width: 100px;
+    width: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cv-table {
+    font-size: 0.85em;
+  }
+  
+  .cv-label, .cv-value {
+    padding: 6px 8px;
+  }
+  
+  .cv-section h2 {
+    font-size: 1.2em;
+  }
+}
